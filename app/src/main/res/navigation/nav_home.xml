@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.teamone.e_tour.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailTourFragment"
+            app:destination="@id/detailTourFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popEnterAnim="@anim/fui_slide_in_right"
+            app:popExitAnim="@anim/fui_slide_out_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_forYou"
+            app:destination="@id/forYou"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_popular"
+            app:destination="@id/popular" />
+        <action
+            android:id="@+id/action_homeFragment_to_voucherDetailFragment"
+            app:destination="@id/voucherDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationPage"
+            app:destination="@id/notificationPage"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_inputSearch"
+            app:destination="@id/inputSearch" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailTourFragment"
+        android:name="com.teamone.e_tour.fragments.DetailRouteFragment"
+        android:label="fragment_detail_tour"
+        tools:layout="@layout/fragment_detail_route" >
+        <action
+            android:id="@+id/action_detailTourFragment_to_tourListFragment"
+            app:destination="@id/tourListFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_in_right"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_detailTourFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left" />
+        <action
+            android:id="@+id/action_detailTourFragment_to_detailDestination"
+            app:destination="@id/detailDestination" />
+        <action
+            android:id="@+id/action_detailTourFragment_to_companyDetail"
+            app:destination="@id/companyDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/tourListFragment"
+        android:name="com.teamone.e_tour.fragments.TourListFragment"
+        android:label="fragment_tour_list"
+        tools:layout="@layout/fragment_tour_list" >
+        <action
+            android:id="@+id/action_tourListFragment_to_bookTicketFragment"
+            app:destination="@id/bookTicketFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_in_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/visitorInformationFragment2"
+        android:name="com.teamone.e_tour.fragments.VisitorInformationFragment"
+        android:label="fragment_visitor_information"
+        tools:layout="@layout/fragment_visitor_information" >
+        <action
+            android:id="@+id/action_visitorInformationFragment2_to_bookTicketFragment"
+            app:destination="@id/bookTicketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookTicketFragment"
+        android:name="com.teamone.e_tour.fragments.BookTicketFragment"
+        android:label="fragment_book_ticket"
+        tools:layout="@layout/fragment_book_ticket" >
+        <action
+            android:id="@+id/action_bookTicketFragment_to_visitorInformationFragment2"
+            app:destination="@id/visitorInformationFragment2" />
+        <action
+            android:id="@+id/action_bookTicketFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_bookTicketFragment_to_contactInformationFragment"
+            app:destination="@id/contactInformationFragment" />
+        <action
+            android:id="@+id/action_bookTicketFragment_to_chooseVoucher"
+            app:destination="@id/chooseVoucher"
+            app:enterAnim="@anim/bottom_to_top" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactInformationFragment"
+        android:name="com.teamone.e_tour.fragments.ContactInformationFragment"
+        android:label="ContactInformationFragment" >
+        <action
+            android:id="@+id/action_contactInformationFragment_to_bookTicketFragment"
+            app:destination="@id/bookTicketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedTab"
+        android:name="com.teamone.e_tour.fragments.SavedTab"
+        android:label="fragment_saved_tab"
+        tools:layout="@layout/fragment_saved_tab" />
+    <fragment
+        android:id="@+id/historyTab"
+        android:name="com.teamone.e_tour.fragments.HistoryTab"
+        android:label="fragment_history_tab"
+        tools:layout="@layout/fragment_history_tab" >
+        <action
+            android:id="@+id/action_historyTab_to_rateTour"
+            app:destination="@id/rateTour" />
+        <action
+            android:id="@+id/action_historyTab_to_detailIncomingTour"
+            app:destination="@id/detailIncomingTour" />
+        <action
+            android:id="@+id/action_historyTab_to_detailVisitedTour"
+            app:destination="@id/detailVisitedTour" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountTab"
+        android:name="com.teamone.e_tour.fragments.AccountTab"
+        android:label="fragment_account_tab"
+        tools:layout="@layout/fragment_account_tab" >
+        <action
+            android:id="@+id/action_accountTab_to_allSupport"
+            app:destination="@id/allSupport" />
+        <action
+            android:id="@+id/action_accountTab_to_viewAllCardFragment"
+            app:destination="@id/viewAllCardFragment"
+            app:popUpTo="@id/accountTab"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/rateTour"
+        android:name="com.teamone.e_tour.fragments.RateTour"
+        android:label="fragment_rate_tour"
+        tools:layout="@layout/fragment_rate_tour" >
+        <action
+            android:id="@+id/action_rateTour_to_thanksForRating"
+            app:destination="@id/thanksForRating" />
+    </fragment>
+    <fragment
+        android:id="@+id/thanksForRating"
+        android:name="com.teamone.e_tour.fragments.ThanksForRating"
+        android:label="fragment_thanks_for_rating"
+        tools:layout="@layout/fragment_thanks_for_rating" >
+        <action
+            android:id="@+id/action_thanksForRating_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forYou"
+        android:name="com.teamone.e_tour.fragments.ForYou"
+        android:label="fragment_for_you"
+        tools:layout="@layout/fragment_for_you" >
+        <action
+            android:id="@+id/action_forYou_to_detailTourFragment"
+            app:destination="@id/detailTourFragment" />
+        <action
+            android:id="@+id/action_forYou_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/popular"
+        android:name="com.teamone.e_tour.fragments.Popular"
+        android:label="Popular" />
+    <fragment
+        android:id="@+id/voucherDetailFragment"
+        android:name="com.teamone.e_tour.fragments.VoucherDetailFragment"
+        android:label="fragment_voucher_detail"
+        tools:layout="@layout/fragment_voucher_detail" />
+    <fragment
+        android:id="@+id/detailIncomingTour"
+        android:name="com.teamone.e_tour.fragments.DetailIncomingTour"
+        android:label="fragment_detail_incoming_tour"
+        tools:layout="@layout/fragment_detail_incoming_tour" >
+        <action
+            android:id="@+id/action_detailIncomingTour_to_reportTour"
+            app:destination="@id/reportTour" />
+    </fragment>
+    <fragment
+        android:id="@+id/visitorInformationDetail"
+        android:name="com.teamone.e_tour.fragments.VisitorInformationDetail"
+        android:label="fragment_visitor_information_detail"
+        tools:layout="@layout/fragment_visitor_information_detail" />
+    <fragment
+        android:id="@+id/detailVisitedTour"
+        android:name="com.teamone.e_tour.fragments.DetailVisitedTour"
+        android:label="DetailVisitedTour" >
+        <action
+            android:id="@+id/action_detailVisitedTour_to_reportTour"
+            app:destination="@id/reportTour" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportTour"
+        android:name="com.teamone.e_tour.fragments.ReportTour"
+        android:label="fragment_report_tour"
+        tools:layout="@layout/fragment_report_tour" />
+    <fragment
+        android:id="@+id/contactSupportFragment"
+        android:name="com.teamone.e_tour.fragments.ContactSupportFragment"
+        android:label="fragment_contact_support"
+        tools:layout="@layout/fragment_contact_support" />
+    <fragment
+        android:id="@+id/notificationPage"
+        android:name="com.teamone.e_tour.fragments.NotificationPage"
+        android:label="fragment_notification_page"
+        tools:layout="@layout/fragment_notification_page" >
+        <action
+            android:id="@+id/action_notificationPage_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/inputSearch"
+        android:name="com.teamone.e_tour.fragments.InputSearch"
+        android:label="fragment_input_search"
+        tools:layout="@layout/fragment_input_search" />
+    <fragment
+        android:id="@+id/detailDestination"
+        android:name="com.teamone.e_tour.fragments.DetailDestination"
+        android:label="fragment_detail_destination"
+        tools:layout="@layout/fragment_detail_destination" />
+    <fragment
+        android:id="@+id/allSupport"
+        android:name="com.teamone.e_tour.fragments.AllSupport"
+        android:label="fragment_all_support"
+        tools:layout="@layout/fragment_all_support" />
+    <fragment
+        android:id="@+id/viewAllCardFragment"
+        android:name="com.teamone.e_tour.fragments.ViewAllCardFragment"
+        android:label="fragment_view_all_card"
+        tools:layout="@layout/fragment_view_all_card" >
+        <action
+            android:id="@+id/action_viewAllCardFragment_to_accountTab2"
+            app:destination="@id/accountTab"
+            app:popUpTo="@id/accountTab"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_viewAllCardFragment_to_paymentCardDetail"
+            app:destination="@id/paymentCardDetail" />
+        <action
+            android:id="@+id/action_viewAllCardFragment_to_addPaymentCard"
+            app:destination="@id/addPaymentCard" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentCardDetail"
+        android:name="com.teamone.e_tour.fragments.PaymentCardDetail"
+        android:label="fragment_payment_card_detail"
+        tools:layout="@layout/fragment_payment_card_detail" >
+        <action
+            android:id="@+id/action_paymentCardDetail_to_addPaymentCard"
+            app:destination="@id/addPaymentCard" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPaymentCard"
+        android:name="com.teamone.e_tour.fragments.AddPaymentCard"
+        android:label="AddPaymentCard" />
+    <fragment
+        android:id="@+id/companyDetail"
+        android:name="com.teamone.e_tour.fragments.CompanyDetail"
+        android:label="fragment_company_detail"
+        tools:layout="@layout/fragment_company_detail" />
+    <fragment
+        android:id="@+id/chooseVoucher"
+        android:name="com.teamone.e_tour.fragments.ChooseVoucher"
+        android:label="fragment_choose_voucher"
+        tools:layout="@layout/fragment_choose_voucher" />
+</navigation>

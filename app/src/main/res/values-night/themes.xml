@@ -1,0 +1,42 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ETour" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue_dark</item>
+        <item name="colorPrimaryVariant">@color/blue_dark</item>
+        <item name="colorPrimaryContainer">#004B73</item>
+        <item name="colorOnPrimaryContainer">#F4F9FF</item>
+        <item name="colorOnPrimary">#003351</item>
+        <item name="colorPrimaryDark">@color/blue_dark</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#B8C8DA</item>
+        <item name="colorSecondaryVariant">#394857</item>
+        <item name="colorOnSecondary">#23323F</item>
+        <item name="colorSecondaryContainer">#394857</item>
+        <item name="colorOnSecondaryContainer">@color/blue_dark</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="background">@color/blue_dark</item>
+        <item name="textFillColor">@color/white</item>
+        <item name="strokeColor">@color/white</item>
+        <!-- Customize your theme here. -->
+        <item name="colorTertiary">#D1BFE7</item>
+        <item name="colorOnTertiary">#372A4A</item>
+        <item name="colorTertiaryContainer">#4E4162</item>
+        <item name="colorOnTertiaryContainer">#EDDCFF</item>
+
+        <item name="colorOnSurface">@color/blue_dark</item>
+        <item name="colorOnSurfaceVariant">@color/placeholder</item>
+    </style>
+
+    <style name="SheetDialog" parent="Theme.Design.BottomSheetDialog">
+        <!--<item name="android:windowCloseOnTouchOutside">false</item>-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.3</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+</resources>
