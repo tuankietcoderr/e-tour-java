@@ -18,6 +18,99 @@
         android:paddingHorizontal="30dp"
         android:paddingTop="70dp">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/chevron_left"
+                android:src="@drawable/chevron_left" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Sign up"
+                android:textColor="?textFillColor"
+                android:textSize="36sp"
+                tools:ignore="HardcodedText" />
+        </RelativeLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="25dp"
+            android:hint="@string/username_label"
+            android:textColorHint="?colorOnPrimary"
+            app:boxBackgroundColor="?colorOnPrimaryContainer"
+            app:hintTextColor="?colorOnPrimary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text="@={viewModel.username}"
+                android:textColor="?colorOnPrimary"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password_label"
+            android:textColorHint="?colorOnPrimary"
+            app:boxBackgroundColor="?colorOnPrimaryContainer"
+            app:endIconMode="password_toggle"
+            app:endIconTint="?colorOnPrimary"
+            app:hintTextColor="?colorOnPrimary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text="@={viewModel.password}"
+                android:textColor="?colorOnPrimary"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:hint="@string/confirm_password_label"
+            android:textColorHint="?colorOnPrimary"
+            app:boxBackgroundColor="?colorOnPrimaryContainer"
+            app:endIconMode="password_toggle"
+            app:endIconTint="?colorOnPrimary"
+            app:hintTextColor="?colorOnPrimary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text="@={viewModel.confirmedPassword}"
+                android:textColor="?colorOnPrimary"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/account_registration_next_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:backgroundTint="@color/primary_40"
+            android:paddingVertical="8dp"
+            android:text="@string/next"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
     </LinearLayout>
 
 </layout>
