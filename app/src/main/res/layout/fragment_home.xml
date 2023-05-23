@@ -7,5 +7,296 @@
     android:background="@color/white"
     tools:context=".fragments.HomeFragment">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp">
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/notifcation_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="40dp"
+                android:elevation="0dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/transparent"
+                app:strokeWidth="0dp"
+                android:clickable="true"
+                app:cardCornerRadius="1000dp"
+                android:background="@color/transparent"
+                android:backgroundTint="@color/transparent"
+                app:layout_constraintBottom_toTopOf="@+id/greeting"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="10dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/bell"
+                        app:tint="@color/black"
+                        android:contentDescription="@string/notifcation_icon" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/greeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="80dp"
+                android:fontFamily="@font/manrope_semibold"
+                android:text="@string/hi_hy"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/manrope_semibold"
+                android:text="@string/welcome_to_e_tour"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                app:layout_constraintStart_toStartOf="@+id/greeting"
+                app:layout_constraintTop_toBottomOf="@+id/greeting" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:transitionName="search_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/top_bar_home"
+                android:drawableLeft="@drawable/large_search"
+                android:drawablePadding="8dp"
+                android:elevation="10dp"
+                android:gravity="center_vertical"
+                android:hint="@string/discover_new_experiences"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="13dp"
+                android:shadowColor="@color/shadow"
+                android:shadowRadius="25"
+                android:textColorHint="@color/placeholder"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="70dp"
+                android:fontFamily="@font/manrope_extrabold"
+                android:text="@string/recommend"
+                android:textColor="@color/black"
+                android:textSize="23sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/for_you_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:elevation="0dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/transparent"
+                app:strokeWidth="0dp"
+                android:background="@color/transparent"
+                android:backgroundTint="@color/transparent"
+                app:layout_constraintBottom_toBottomOf="@+id/textView11"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView11">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/manrope_medium"
+                        android:text="@string/see_more"
+                        android:textColor="@color/title_gray"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.faltenreich.skeletonlayout.SkeletonLayout
+                android:id="@+id/recommend_list_skeleton"
+                android:layout_width="match_parent"
+                android:layout_height="390dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView11">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recommend_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="390dp"
+                    android:clipToPadding="false"
+                    android:paddingStart="10dp"
+                    android:orientation="horizontal"
+                    tools:ignore="RtlSymmetry" />
+            </com.faltenreich.skeletonlayout.SkeletonLayout>
+
+
+            <TextView
+                android:id="@+id/popular_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/manrope_extrabold"
+                android:text="@string/popular"
+                android:textColor="@color/black"
+                android:textSize="23sp"
+                app:layout_constraintStart_toStartOf="@+id/textView11"
+                app:layout_constraintTop_toBottomOf="@+id/recommend_list_skeleton" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/popular_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:background="@color/transparent"
+                android:backgroundTint="@color/transparent"
+                android:elevation="0dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/popular_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/popular_text"
+                app:strokeColor="@color/transparent"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/manrope_medium"
+                        android:text="@string/see_more"
+                        android:textColor="@color/title_gray"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.faltenreich.skeletonlayout.SkeletonLayout
+                android:id="@+id/popular_list_skeleton"
+                android:layout_marginTop="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:layout_constraintTop_toBottomOf="@+id/popular_text">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/popular_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp"
+                    tools:ignore="RtlSymmetry" />
+            </com.faltenreich.skeletonlayout.SkeletonLayout>
+
+
+            <TextView
+                android:id="@+id/voucher_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/manrope_extrabold"
+                android:text="@string/voucher"
+                android:textColor="@color/black"
+                android:textSize="23sp"
+                app:layout_constraintStart_toStartOf="@+id/textView11"
+                app:layout_constraintTop_toBottomOf="@+id/popular_list_skeleton" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/voucher_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:background="@color/transparent"
+                android:backgroundTint="@color/transparent"
+                android:elevation="0dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/voucher_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/voucher_text"
+                android:clickable="true"
+                android:checkable="true"
+                app:strokeColor="@color/transparent"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/manrope_medium"
+                        android:text="@string/see_more"
+                        android:textColor="@color/title_gray"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.faltenreich.skeletonlayout.SkeletonLayout
+                android:id="@+id/voucher_list_skeleton"
+                android:layout_marginTop="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/voucher_text">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/hot_voucher_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp"
+                    tools:ignore="RtlSymmetry" />
+            </com.faltenreich.skeletonlayout.SkeletonLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
