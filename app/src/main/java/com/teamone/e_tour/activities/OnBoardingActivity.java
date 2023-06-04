@@ -1,12 +1,14 @@
 package com.teamone.e_tour.activities;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+
 import com.teamone.e_tour.databinding.ActivityOnBoardingBinding;
+import com.teamone.e_tour.models.CredentialToken;
 
 public class OnBoardingActivity extends AppCompatActivity {
     ActivityOnBoardingBinding activityOnBoardingBinding;
