@@ -1,9 +1,11 @@
 package com.teamone.e_tour.activities;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.Navigation;
+
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.teamone.e_tour.R;
 import com.teamone.e_tour.databinding.ActivitySignUpWithGoogleBinding;
 
 public class SignUpWithGoogle extends AppCompatActivity {
