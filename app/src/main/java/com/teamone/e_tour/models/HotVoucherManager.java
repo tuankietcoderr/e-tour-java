@@ -21,10 +21,10 @@ import io.socket.emitter.Emitter;
 
 public class HotVoucherManager {
     private static HotVoucherManager instance;
-    private Context context;
-    private SocketManager socket;
+    private final Context context;
+    private final SocketManager socket;
 
-    private MutableLiveData<ArrayList<Voucher>> vouchers = new MutableLiveData<ArrayList<Voucher>>(new ArrayList<>());
+    private final MutableLiveData<ArrayList<Voucher>> vouchers = new MutableLiveData<ArrayList<Voucher>>(new ArrayList<>());
 
     public MutableLiveData<ArrayList<Voucher>> getVouchers() {
         return vouchers;

@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import com.teamone.e_tour.utils.MySharedPreferences;
 
 public class AppManagement {
-    private Context context;
+    private final Context context;
     static AppManagement instance;
     private Boolean isFirstTime;
 

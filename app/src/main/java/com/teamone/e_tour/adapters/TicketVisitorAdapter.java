@@ -16,7 +16,7 @@ import com.teamone.e_tour.entities.Ticket;
 import java.util.ArrayList;
 
 public class TicketVisitorAdapter extends  RecyclerView.Adapter<TicketVisitorAdapter.ViewHolder> {
-    private Fragment context;
+    private final Fragment context;
     private ArrayList<Ticket.Visitor> visitors = new ArrayList<>();
 
     public TicketVisitorAdapter(Fragment context) {

@@ -23,7 +23,7 @@ public class BookingDataManager {
     private Date departureDate;
     private int numOfVisitor;
     private long price;
-    private MutableLiveData<String> errorMessage = new MutableLiveData<>("");
+    private final MutableLiveData<String> errorMessage = new MutableLiveData<>("");
 
     public MutableLiveData<String> getErrorMessage() {
         return errorMessage;
@@ -71,7 +71,7 @@ public class BookingDataManager {
         this.price = price;
     }
 
-    private MutableLiveData<BookTicketApi.RequestBody> ticketData = new MutableLiveData<>(new BookTicketApi.RequestBody());
+    private final MutableLiveData<BookTicketApi.RequestBody> ticketData = new MutableLiveData<>(new BookTicketApi.RequestBody());
 
     public BookingDataManager() {
         routeName = "";

@@ -66,8 +66,8 @@ public class ViewBookedTicketApi {
         }
     }
 
-    private SocketManager socket;
-    private MutableLiveData<ResponseData> response = new MutableLiveData<>(null);
+    private final SocketManager socket;
+    private final MutableLiveData<ResponseData> response = new MutableLiveData<>(null);
 
     public MutableLiveData<ResponseData> getResponse() {
         return response;

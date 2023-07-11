@@ -22,7 +22,7 @@ public interface SignUpWithGoogleAPI {
             .build()
             .create(SignUpWithGoogleAPI.class);
 
-    public class RegistrationForm {
+    class RegistrationForm {
         public String fullName;
         public String identity;
         public Boolean isForeigner;
@@ -42,7 +42,7 @@ public interface SignUpWithGoogleAPI {
         }
     }
 
-    public class RegistrationWithPasswordSuccess implements Serializable {
+    class RegistrationWithPasswordSuccess implements Serializable {
         private String statusCode;
         private String message;
         private Data data;

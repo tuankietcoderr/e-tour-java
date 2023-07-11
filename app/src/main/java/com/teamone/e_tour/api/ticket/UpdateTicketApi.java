@@ -128,15 +128,15 @@ public class UpdateTicketApi {
     }
 
 
-    private Context context;
+    private final Context context;
     private SocketManager socket;
 
     public MutableLiveData<Ticket> getData() {
         return data;
     }
 
-    private MutableLiveData<Ticket> data = new MutableLiveData<>(null);
-    private MutableLiveData<ResponseData> responseData = new MutableLiveData<>(null);
+    private final MutableLiveData<Ticket> data = new MutableLiveData<>(null);
+    private final MutableLiveData<ResponseData> responseData = new MutableLiveData<>(null);
 
 
     public UpdateTicketApi(Context context) {

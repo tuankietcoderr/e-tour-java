@@ -19,10 +19,10 @@ import java.util.Map;
 
 public class DetailRouteManager {
     private static DetailRouteManager instance;
-    private AppCompatActivity context;
-    private ViewDetailRouteApi api;
+    private final AppCompatActivity context;
+    private final ViewDetailRouteApi api;
 
-    private MutableLiveData<HashMap<String, TouristRoute>> cacheData = new MutableLiveData<>(new HashMap<String, TouristRoute>());
+    private final MutableLiveData<HashMap<String, TouristRoute>> cacheData = new MutableLiveData<>(new HashMap<String, TouristRoute>());
 
     private MutableLiveData<TouristRoute> routeInfo = new MutableLiveData<>();
 

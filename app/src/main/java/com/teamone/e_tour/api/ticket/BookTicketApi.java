@@ -125,14 +125,14 @@ public class BookTicketApi {
     }
 
 
-    private Context context;
+    private final Context context;
     private SocketManager socket;
 
     public MutableLiveData<Ticket> getData() {
         return data;
     }
 
-    private MutableLiveData<Ticket> data = new MutableLiveData<>(null);
+    private final MutableLiveData<Ticket> data = new MutableLiveData<>(null);
 
 
     public BookTicketApi(Context context) {

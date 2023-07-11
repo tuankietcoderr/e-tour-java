@@ -16,7 +16,7 @@ public class RegistrationViewModel {
     public final ObservableField<Boolean> isForeigner = new ObservableField<>(false);
     public final ObservableField<String> id = new ObservableField<>();
 
-    private Context context;
+    private final Context context;
 
     public RegistrationViewModel(Context context) {
         this.context = context;

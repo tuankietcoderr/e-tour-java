@@ -27,7 +27,7 @@ import java.util.Objects;
 public class VoucherAdapter extends RecyclerView.Adapter<VoucherAdapter.ViewHolder> {
     private final Fragment context;
     private ArrayList<Voucher> vouchers = new ArrayList<>();
-    private int cardId;
+    private final int cardId;
     IOnclick onClickHandler;
 
     public interface IOnclick {

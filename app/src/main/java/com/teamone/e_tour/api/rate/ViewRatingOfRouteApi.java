@@ -33,8 +33,8 @@ public class ViewRatingOfRouteApi {
     }
 
 
-    private SocketManager socket;
-    private MutableLiveData<ResponseData> response = new MutableLiveData<>();
+    private final SocketManager socket;
+    private final MutableLiveData<ResponseData> response = new MutableLiveData<>();
 
     public ViewRatingOfRouteApi(Context context) {
         socket = SocketManager.getInstance(context);

@@ -22,7 +22,7 @@ public interface RegistrationAPI {
             .build()
             .create(RegistrationAPI.class);
 
-    public class RegistrationForm {
+    class RegistrationForm {
         public String fullName;
         public String identity;
         public Boolean isForeigner;
@@ -44,7 +44,7 @@ public interface RegistrationAPI {
         }
     }
 
-    public class RegistrationWithPasswordSuccess implements Serializable {
+    class RegistrationWithPasswordSuccess implements Serializable {
         private String statusCode;
         private String message;
         private Data data;

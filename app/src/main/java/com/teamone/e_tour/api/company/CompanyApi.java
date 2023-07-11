@@ -33,12 +33,12 @@ public interface CompanyApi {
             .build()
             .create(CompanyApi.class);
 
-    public class GetCompanyInfoResponse {
+    class GetCompanyInfoResponse {
         public String message;
         public Company data;
     }
 
-    public class GetTouristRouteOfCompany {
+    class GetTouristRouteOfCompany {
         public String message;
         public ArrayList<TouristRoute> data;
     }

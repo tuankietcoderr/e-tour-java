@@ -34,13 +34,13 @@ public class ViewSavedRouteListApi {
     }
 
 
-    private SocketManager socket;
+    private final SocketManager socket;
 
     public MutableLiveData<ArrayList<TouristRoute>> getData() {
         return data;
     }
 
-    private MutableLiveData<ArrayList<TouristRoute>> data = new MutableLiveData<>(null);
+    private final MutableLiveData<ArrayList<TouristRoute>> data = new MutableLiveData<>(null);
 
     public ViewSavedRouteListApi(SocketManager socket) {
         this.socket = socket;

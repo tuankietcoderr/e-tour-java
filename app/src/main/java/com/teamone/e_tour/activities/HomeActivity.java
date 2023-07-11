@@ -80,7 +80,6 @@ public class HomeActivity extends AppCompatActivity {
         if (requestCode == 1) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, 1);
-                return;
             }
         }
     }
@@ -111,7 +110,6 @@ public class HomeActivity extends AppCompatActivity {
                     .setGraph(R.navigation.nav_home)
                     .setDestination(R.id.homeFragment)
                     .createPendingIntent();
-            ;
 
             assert type != null;
             if (type.equals("route")) {

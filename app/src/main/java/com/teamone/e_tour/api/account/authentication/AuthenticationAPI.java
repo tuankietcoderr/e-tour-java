@@ -22,7 +22,7 @@ public interface AuthenticationAPI {
             .build()
             .create(AuthenticationAPI.class);
 
-    public class Credential {
+    class Credential {
         public String username;
         public String password;
 

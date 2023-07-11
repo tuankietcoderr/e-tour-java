@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class TourAdapter extends RecyclerView.Adapter<TourAdapter.ViewHolder> {
-    private Fragment context;
+    private final Fragment context;
     private String routeName = "";
 
     public TourAdapter(Fragment context) {

@@ -29,7 +29,7 @@ public interface SavedVoucher {
             .build()
             .create(SavedVoucher.class);
 
-    public class ViewSavedVoucherResponse implements Serializable {
+    class ViewSavedVoucherResponse implements Serializable {
         public String statusCode;
         public String message;
         public ArrayList<Voucher> data;

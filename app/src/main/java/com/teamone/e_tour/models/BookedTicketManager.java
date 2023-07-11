@@ -19,10 +19,10 @@ import io.socket.emitter.Emitter;
 
 public class BookedTicketManager {
     private static BookedTicketManager instance;
-    private AppCompatActivity context;
-    private ViewBookedTicketApi api;
+    private final AppCompatActivity context;
+    private final ViewBookedTicketApi api;
 
-    private MutableLiveData<ArrayList<ViewBookedTicketApi.ResponseData.Ticket>> bookedTickets = new MutableLiveData<>();
+    private final MutableLiveData<ArrayList<ViewBookedTicketApi.ResponseData.Ticket>> bookedTickets = new MutableLiveData<>();
 
     private String ratingTicketId;
 

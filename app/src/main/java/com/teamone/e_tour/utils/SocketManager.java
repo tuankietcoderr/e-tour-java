@@ -20,7 +20,7 @@ import io.socket.emitter.Emitter;
 
 public class SocketManager {
     private static SocketManager instance;
-    private Context context;
+    private final Context context;
     private Socket socket = null;
 
     public Socket getSocket() {

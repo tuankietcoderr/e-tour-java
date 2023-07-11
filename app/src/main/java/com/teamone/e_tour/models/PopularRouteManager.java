@@ -21,10 +21,10 @@ import io.socket.emitter.Emitter;
 public class PopularRouteManager {
 
     private static PopularRouteManager instance;
-    private Context context;
-    private SocketManager socket;
+    private final Context context;
+    private final SocketManager socket;
 
-    private MutableLiveData<ArrayList<TouristRoute>> routeList = new MutableLiveData<ArrayList<TouristRoute>>(new ArrayList<>());
+    private final MutableLiveData<ArrayList<TouristRoute>> routeList = new MutableLiveData<ArrayList<TouristRoute>>(new ArrayList<>());
 
     public MutableLiveData<ArrayList<TouristRoute>> getRouteList() {
         return routeList;

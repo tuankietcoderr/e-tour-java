@@ -14,10 +14,10 @@ import java.util.ArrayList;
 public class SavedRouteManager {
 
     private static SavedRouteManager instance;
-    private AppCompatActivity context;
+    private final AppCompatActivity context;
     private ViewSavedRouteListApi api;
 
-    private MutableLiveData<ArrayList<TouristRoute>> routes = new MutableLiveData<>();
+    private final MutableLiveData<ArrayList<TouristRoute>> routes = new MutableLiveData<>();
 
     private String ratingTicketId;
 

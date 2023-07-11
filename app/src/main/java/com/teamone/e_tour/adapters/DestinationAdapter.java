@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.ViewHolder> {
 
-    private Context context;
+    private final Context context;
     private ArrayList<String> destinations = new ArrayList<>();
 
     public DestinationAdapter(Context context) {

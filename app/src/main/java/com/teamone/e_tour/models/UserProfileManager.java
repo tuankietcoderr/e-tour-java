@@ -17,7 +17,7 @@ import io.socket.emitter.Emitter;
 
 public class UserProfileManager {
     private static UserProfileManager instance;
-    private Context context;
+    private final Context context;
     private final MutableLiveData<UserProfile> userProfile = new MutableLiveData<>(new UserProfile());
 
     public UserProfileManager(Context context) {

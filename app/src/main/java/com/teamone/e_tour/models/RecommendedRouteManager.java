@@ -21,9 +21,9 @@ import io.socket.emitter.Emitter;
 
 public class RecommendedRouteManager {
     private static RecommendedRouteManager instance;
-    private Context context;
+    private final Context context;
 
-    private MutableLiveData<ArrayList<TouristRoute>> routeList = new MutableLiveData<ArrayList<TouristRoute>>(new ArrayList<>());
+    private final MutableLiveData<ArrayList<TouristRoute>> routeList = new MutableLiveData<ArrayList<TouristRoute>>(new ArrayList<>());
 
     public MutableLiveData<ArrayList<TouristRoute>> getRouteList() {
         return routeList;

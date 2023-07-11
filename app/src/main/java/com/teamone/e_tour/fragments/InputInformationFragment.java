@@ -62,7 +62,7 @@ public class InputInformationFragment extends Fragment {
             }
         });
 
-        ((EditText) binding.specialRequirementEdit).addTextChangedListener(new TextWatcher() {
+        binding.specialRequirementEdit.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -79,7 +79,7 @@ public class InputInformationFragment extends Fragment {
             }
         });
 
-        ((EditText) binding.pickupLocationEdit).addTextChangedListener(new TextWatcher() {
+        binding.pickupLocationEdit.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -121,7 +121,7 @@ public class InputInformationFragment extends Fragment {
                 binding.makeYouAsVisitor.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             }
             BookingDataManager.getInstance().setNumOfVisitor(requestBody.ticketInfo.getVisitors().size());
-            binding.totalPrice.setText("VND " + String.valueOf(BookingDataManager.getInstance().getNumOfVisitor() * BookingDataManager.getInstance().getPrice()));
+            binding.totalPrice.setText("VND " + BookingDataManager.getInstance().getNumOfVisitor() * BookingDataManager.getInstance().getPrice());
         });
 
 

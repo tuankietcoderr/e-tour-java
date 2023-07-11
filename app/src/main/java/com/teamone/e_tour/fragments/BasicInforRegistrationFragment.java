@@ -31,7 +31,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class BasicInforRegistrationFragment extends Fragment {
-    private Context context = getActivity();
+    private final Context context = getActivity();
     private FragmentBasicInforRegistrationBinding binding;
     private RegistrationViewModel viewModel;
 

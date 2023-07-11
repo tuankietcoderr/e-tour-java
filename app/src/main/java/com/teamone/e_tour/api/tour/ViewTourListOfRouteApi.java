@@ -29,14 +29,14 @@ public class ViewTourListOfRouteApi {
     }
 
 
-    private Context context;
+    private final Context context;
     private SocketManager socket;
 
     public MutableLiveData<ArrayList<Tour>> getTourList() {
         return tourList;
     }
 
-    private MutableLiveData<ArrayList<Tour>> tourList = new MutableLiveData<ArrayList<Tour>>();
+    private final MutableLiveData<ArrayList<Tour>> tourList = new MutableLiveData<ArrayList<Tour>>();
 
 
     public ViewTourListOfRouteApi(Context context) {

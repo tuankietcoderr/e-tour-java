@@ -21,7 +21,7 @@
 
 Download the APK file from the following link and install it on your Android device.
 
-[Download APK](#)
+[Download APK](./app/release/app-release.apk)
 
 ### Source Code
 

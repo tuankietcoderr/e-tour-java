@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public class ImageAdapter extends PagerAdapter {
-    private Context context;
+    private final Context context;
     private ArrayList<String> images = new ArrayList<>();
 
     public ImageAdapter(Context context) {

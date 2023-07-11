@@ -32,7 +32,7 @@ public interface ChatRoomApi {
             .create(ChatRoomApi.class);
 
 
-    public static class ResponseData {
+    class ResponseData {
         public int status;
         public String message;
         public ArrayList<ChatRoomManager.ResponseData.ChatRoom> data;

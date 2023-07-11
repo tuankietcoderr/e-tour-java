@@ -48,6 +48,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -55,7 +56,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AuthenticationActivity extends AppCompatActivity {
-    private Context context = this;
+    private final Context context = this;
     LoadingDialog dialog;
     ActivityAuthenticationBinding activityAuthenticationBinding;
     AuthenticationInfo viewmodel = new AuthenticationInfo();
@@ -113,7 +114,7 @@ public class AuthenticationActivity extends AppCompatActivity {
     private void goToSignIn() {
         Log.e("sign in with google", "signing in");
         // Choose authentication providers
-        List<AuthUI.IdpConfig> providers = Arrays.asList(new AuthUI.IdpConfig.GoogleBuilder().build());
+        List<AuthUI.IdpConfig> providers = Collections.singletonList(new AuthUI.IdpConfig.GoogleBuilder().build());
         // Create and launch sign-in intent
         Intent signInIntent = AuthUI.getInstance()
                 .createSignInIntentBuilder()
@@ -162,9 +163,9 @@ public class AuthenticationActivity extends AppCompatActivity {
 
                                 try {
                                     assert response.errorBody() != null;
-                                    String errorBody = String.valueOf(response.errorBody().string());
+                                    String errorBody = response.errorBody().string();
                                     Log.e("errorbody", errorBody);
-                                    SignInWithPasswordApiError result = gson.fromJson(errorBody.toString(), SignInWithPasswordApiError.class);
+                                    SignInWithPasswordApiError result = gson.fromJson(errorBody, SignInWithPasswordApiError.class);
                                     Log.e("message", result.getMessage());
                                     Toast.makeText(AuthenticationActivity.this, result.getMessage(), Toast.LENGTH_SHORT).show();
                                     if (result.getMessage().equals("User not found")) {

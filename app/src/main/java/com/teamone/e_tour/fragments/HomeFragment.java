@@ -43,7 +43,7 @@ import com.teamone.e_tour.models.UserProfileManager;
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
-    private Context context = getActivity();
+    private final Context context = getActivity();
     private RecyclerView recommendList;
 
     public HomeFragment() {

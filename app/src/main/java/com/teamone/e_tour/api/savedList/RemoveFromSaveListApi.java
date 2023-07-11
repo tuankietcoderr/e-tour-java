@@ -27,8 +27,8 @@ public class RemoveFromSaveListApi {
     }
 
 
-    private Context context;
-    private SocketManager socket;
+    private final Context context;
+    private final SocketManager socket;
 
     public RemoveFromSaveListApi(Context context) {
         this.context = context;

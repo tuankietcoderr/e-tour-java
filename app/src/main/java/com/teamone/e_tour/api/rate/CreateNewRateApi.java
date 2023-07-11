@@ -22,7 +22,7 @@ public class CreateNewRateApi {
     public static final String emitEvent = "create-rate";
     public static final String serverResponseEvent = "create-rate-result";
 
-    private SocketManager socket;
+    private final SocketManager socket;
 
     public CreateNewRateApi(Context context) {
         socket = SocketManager.getInstance(context);

@@ -30,17 +30,17 @@ public interface PaymentCardApi {
             .build()
             .create(PaymentCardApi.class);
 
-    public class ViewAllCardsResponse implements Serializable {
+    class ViewAllCardsResponse implements Serializable {
         public String statusCode;
         public String message;
         public ArrayList<PaymentCard> data;
     }
 
-    public class UpdatedResponse implements Serializable {
+    class UpdatedResponse implements Serializable {
 
     }
 
-    public class MakeDefaultBody implements Serializable {
+    class MakeDefaultBody implements Serializable {
         public String cardId;
 
         public MakeDefaultBody(String cardId) {
@@ -48,7 +48,7 @@ public interface PaymentCardApi {
         }
     }
 
-    public class UpdateCardInfoBody implements Serializable {
+    class UpdateCardInfoBody implements Serializable {
         public String cardNumber;
         public String name;
         public Date expiredDate;

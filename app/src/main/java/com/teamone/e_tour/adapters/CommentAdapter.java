@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 
 public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHolder> {
-    private Fragment context;
+    private final Fragment context;
     private ArrayList<Rating> ratings = new ArrayList<>();
 
     public CommentAdapter(Fragment context) {

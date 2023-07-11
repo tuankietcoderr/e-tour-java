@@ -32,8 +32,8 @@ public class AddToSaveListApi {
     }
 
 
-    private Context context;
-    private SocketManager socket;
+    private final Context context;
+    private final SocketManager socket;
 
     public AddToSaveListApi(Context context) {
         this.context = context;

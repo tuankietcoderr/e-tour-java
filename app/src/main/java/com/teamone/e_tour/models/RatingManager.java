@@ -14,10 +14,10 @@ import java.util.HashMap;
 
 public class RatingManager {
     private static RatingManager instance;
-    private AppCompatActivity context;
-    private ViewRatingOfRouteApi api;
+    private final AppCompatActivity context;
+    private final ViewRatingOfRouteApi api;
 
-    private MutableLiveData<HashMap<String, ArrayList<Rating>>> cacheData = new MutableLiveData<>(new HashMap<String, ArrayList<Rating>>());
+    private final MutableLiveData<HashMap<String, ArrayList<Rating>>> cacheData = new MutableLiveData<>(new HashMap<String, ArrayList<Rating>>());
 
     private MutableLiveData<ArrayList<Rating>> rating = new MutableLiveData<>();
 

@@ -85,7 +85,7 @@ public class InputInformationSignUpWithGoogle extends Fragment {
                                 requireActivity().finish();
                             } else {
                                 assert response.errorBody() != null;
-                                Toast.makeText(requireActivity(), "Success: " + response.code() + " - " + response.errorBody().string().toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(requireActivity(), "Success: " + response.code() + " - " + response.errorBody().string(), Toast.LENGTH_SHORT).show();
                             }
                         } catch (IOException e) {
                             throw new RuntimeException(e);

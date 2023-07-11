@@ -21,7 +21,7 @@ public interface SignInWithGoogleAPI {
             .build()
             .create(SignInWithGoogleAPI.class);
 
-    public class Credential {
+    class Credential {
         public String accessToken;
 
         public Credential(String accessToken) {
