@@ -40,14 +40,11 @@ public class SocketManager {
         try {
             socket = IO.socket(ApiEndpoint.baseUrl, options);
             socket.connect();
-            socket.on(Socket.EVENT_CONNECT_ERROR, new Emitter.Listener() {
-                @Override
-                public void call(Object... args) {
-                    Log.e("socket-error", String.valueOf(args[0]));
-                    context.startActivity(new Intent(context, AuthenticationActivity.class));
-                    ((AppCompatActivity) context).finish();
-                    socket.disconnect();
-                }
+            socket.on(Socket.EVENT_CONNECT_ERROR, args -> {
+                Log.e("socket-error", String.valueOf(args[0]));
+                context.startActivity(new Intent(context, AuthenticationActivity.class));
+                ((AppCompatActivity) context).finish();
+                socket.disconnect();
             });
         } catch (URISyntaxException e) {
             Log.e("socket error", e.getMessage());
@@ -61,12 +58,7 @@ public class SocketManager {
         if (socket.connected()) {
             socket.emit(eventName, args);
         } else {
-            socket.on(Socket.EVENT_CONNECT, new Emitter.Listener() {
-                @Override
-                public void call(Object... _) {
-                    socket.emit(eventName, args);
-                }
-            });
+            socket.on(Socket.EVENT_CONNECT, a -> socket.emit(eventName, args));
         }
     }
 

@@ -26,23 +26,25 @@ public class SavedRouteManager {
 
         ViewSavedRouteListApi.getInstance(context).send();
 
-        ViewSavedRouteListApi.getInstance(context).getData().observe(context, new Observer<ArrayList<TouristRoute>>() {
-            @Override
-            public void onChanged(ArrayList<TouristRoute> touristRoutes) {
-                routes.postValue(touristRoutes);
-            }
-        });
+        ViewSavedRouteListApi.getInstance(context).getData().observe(context, touristRoutes -> routes.postValue(touristRoutes));
     }
 
     public static SavedRouteManager getInstance(AppCompatActivity context) {
         if (instance == null) {
             instance = new SavedRouteManager(context);
+        } else if (context != instance.getContext()) {
+            instance = new SavedRouteManager(context);
+            ViewSavedRouteListApi.getInstance(context).send();
         }
         return instance;
     }
 
     public MutableLiveData<ArrayList<TouristRoute>> getRoutes() {
         return routes;
+    }
+
+    public AppCompatActivity getContext() {
+        return context;
     }
 
     public void remove(String routeId) {

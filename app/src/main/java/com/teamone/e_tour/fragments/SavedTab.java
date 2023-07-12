@@ -73,13 +73,10 @@ public class SavedTab extends Fragment {
         savedVoucherListSkeleton.setMaskCornerRadius(60);
         savedVoucherListSkeleton.showSkeleton();
 
-        SavedRouteManager.getInstance((AppCompatActivity) getActivity()).getRoutes().observe(getViewLifecycleOwner(), new Observer<ArrayList<TouristRoute>>() {
-            @Override
-            public void onChanged(ArrayList<TouristRoute> touristRoutes) {
-                if (touristRoutes == null) return;
-                dialog.dismiss();
-                adapter.setRouteList(touristRoutes);
-            }
+        SavedRouteManager.getInstance((AppCompatActivity) getActivity()).getRoutes().observe(getViewLifecycleOwner(), touristRoutes -> {
+            if (touristRoutes == null) return;
+            dialog.dismiss();
+            adapter.setRouteList(touristRoutes);
         });
 
         fetchSavedVoucher();

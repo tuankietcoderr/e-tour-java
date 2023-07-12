@@ -74,12 +74,7 @@ public class HistoryTab extends Fragment {
         binding.visitedTourList.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         binding.visitedTourList.setNestedScrollingEnabled(false);
 
-        binding.swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                BookedTicketManager.getInstance((AppCompatActivity) getActivity()).viewBookedTickets();
-            }
-        });
+        binding.swiperefresh.setOnRefreshListener(() -> BookedTicketManager.getInstance((AppCompatActivity) getActivity()).viewBookedTickets());
 
         return binding.getRoot();
     }

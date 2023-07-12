@@ -32,15 +32,12 @@ public class BookedTicketManager {
 
         viewBookedTickets();
 
-        api.getSocket().on("booked-ticket-list", new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").create();
+        api.getSocket().on("booked-ticket-list", args -> {
+            Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").create();
 
-                ViewBookedTicketApi.ResponseData responseData = gson.fromJson(String.valueOf(args[0]), ViewBookedTicketApi.ResponseData.class);
-                if (responseData.status == 200) {
-                    bookedTickets.postValue(responseData.data);
-                }
+            ViewBookedTicketApi.ResponseData responseData = gson.fromJson(String.valueOf(args[0]), ViewBookedTicketApi.ResponseData.class);
+            if (responseData.status == 200) {
+                bookedTickets.postValue(responseData.data);
             }
         });
     }
@@ -48,18 +45,23 @@ public class BookedTicketManager {
     public static BookedTicketManager getInstance(AppCompatActivity context) {
         if (instance == null) {
             instance = new BookedTicketManager(context);
+        } else if (context != instance.getContext()) {
+            instance = new BookedTicketManager(context);
         }
         return instance;
     }
 
     public void viewBookedTickets() {
         api.finish();
-//        bookedTickets = new MutableLiveData<>();
         api.fetch();
     }
 
     public MutableLiveData<ArrayList<ViewBookedTicketApi.ResponseData.Ticket>> getBookedTickets() {
         return bookedTickets;
+    }
+
+    public AppCompatActivity getContext() {
+        return context;
     }
 
     public String getRatingTicketId() {

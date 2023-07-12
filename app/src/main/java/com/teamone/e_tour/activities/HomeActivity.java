@@ -223,6 +223,41 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        UserProfileManager.getInstance(this).fetchUserProfile();
+
+        // Initialize individual socket and connect it to server to reduce response time when fetching route
+        SocketManager.reload(this);
+        DetailRouteManager.getInstance(this);
+        BookedTicketManager.getInstance(this);
+        RatingManager.getInstance(this);
+        SavedRouteManager.getInstance(this);
+        PopularRouteManager.getInstance(this).fetchData(10);
+        HotVoucherManager.getInstance(this).fetchData(10);
+        com.teamone.e_tour.models.NotificationManager.getInstance(this).fetchData();
+        ChatRoomManager.getInstance().setContext(this);
+
+
+        SocketManager.getInstance(this).on("user-profile", new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                Gson gson = new GsonBuilder().create();
+                CredentialToken.ResponseData responseData = gson.fromJson(String.valueOf(args[0]), CredentialToken.ResponseData.class);
+
+                MySharedPreferences mySharedPreferences = new MySharedPreferences(HomeActivity.this);
+                SharedPreferences.Editor editor = mySharedPreferences.getEditor();
+                editor.putString("fullname", responseData.data.getFullName());
+                editor.putString("email", responseData.data.getEmail());
+                editor.putString("image", responseData.data.getImage());
+                editor.apply();
+                CredentialToken.getInstance(HomeActivity.this).getUserProfile().postValue(responseData.data);
+            }
+        });
+    }
+
+    @Override
     public void onBackPressed() {
 //        if (backId == 0) {
         super.onBackPressed();
