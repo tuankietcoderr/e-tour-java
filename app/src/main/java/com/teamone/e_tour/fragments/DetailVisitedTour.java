@@ -109,7 +109,7 @@ public class DetailVisitedTour extends Fragment {
                                 boolean isComment = ratings.stream().anyMatch(rating_ -> rating_.getUserId().get_id().equals(uid));
 
                                 if (isComment) {
-                                    displayRateDetail(rating.getDescription(), rating.getStar(), ticket.tourId.touristRoute._id);
+                                    displayRateDetail(rating.getDescription(), rating.getStar(), ticket.tourId.touristRoute._id, rating.getCreatedAt());
                                 }
                             }
                         });
@@ -131,13 +131,15 @@ public class DetailVisitedTour extends Fragment {
         return binding.getRoot();
     }
 
-    private void displayRateDetail(String commentTextString, float star, String routeId) {
+    private void displayRateDetail(String commentTextString, float star, String routeId, Date date) {
         viewDialog = getLayoutInflater().inflate(R.layout.fragment_rate_tour, null);
         ImageView avatar = viewDialog.findViewById(R.id.avatar);
         TextView displayName = viewDialog.findViewById(R.id.user_display_name);
+        TextView editDate = viewDialog.findViewById(R.id.edit_date);
         UserProfile userProfile = UserProfileManager.getInstance(getActivity()).getUserProfile();
         Glide.with(getActivity()).load(userProfile.getImage()).into(avatar);
         displayName.setText(userProfile.getFullName());
+        editDate.setText(Formatter.dateToDateWithoutHourString(date));
         TextView commentText = viewDialog.findViewById(R.id.comment_text);
         RatingBar ratingBar = viewDialog.findViewById(R.id.ratingBar);
         commentText.setText(commentTextString);
@@ -173,15 +175,10 @@ public class DetailVisitedTour extends Fragment {
                 TextInputEditText comment = viewDialog.findViewById(R.id.comment_text);
                 CreateNewRateApi api = new CreateNewRateApi(getActivity());
                 api.send(rating.getRating(), comment.getText().toString(), routeId);
-                displayRateDetail(comment.getText().toString(), rating.getRating(), routeId);
+                displayRateDetail(comment.getText().toString(), rating.getRating(), routeId, new Date());
             }
         });
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                displayRateDetail(commentTextString, star, routeId);
-            }
-        });
+        backBtn.setOnClickListener(v -> displayRateDetail(commentTextString, star, routeId, new Date()));
         bottomSheetDialog.setContentView(viewDialog);
         if (!bottomSheetDialog.isShowing()) bottomSheetDialog.show();
     }
