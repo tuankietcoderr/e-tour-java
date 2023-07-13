@@ -64,6 +64,9 @@ public class DetailVisitedTour extends Fragment {
         requireActivity().findViewById(R.id.bottom_navigation).setVisibility(View.INVISIBLE);
         requireActivity().findViewById(R.id.home_wrapper).setPadding(0, 0, 0, 0);
 
+        binding.topAppBar.setOnClickListener(v -> {
+            Navigation.findNavController(v).popBackStack();
+        });
 
         BookedTicketManager.getInstance((AppCompatActivity) getActivity()).getBookedTickets().observe(getViewLifecycleOwner(), new Observer<ArrayList<ViewBookedTicketApi.ResponseData.Ticket>>() {
             @Override

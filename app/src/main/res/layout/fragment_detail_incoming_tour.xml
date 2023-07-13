@@ -23,7 +23,8 @@
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/topAppBar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
                 android:background="@color/black"
                 app:navigationIcon="@drawable/chevron_left"
                 app:title="Detail ticket"
