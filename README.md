@@ -35,6 +35,11 @@ git clone https://github.com/tuankietcoderr/e-tour-java
 3. Build and run the project
 4. Enjoy!
 
+## Other Repositories
+1. Backend: https://github.com/hoanghy0112/e-tour-backend
+2. Web Management: https://github.com/hoanghy0112/e-tour-management
+3. Web Admin: https://github.com/tuankietcoderr/e-tour-admin
+
 ## Contributors
 
 <a href="https://github.com/tuankietcoderr/e-tour-java/graphs/contributors">
